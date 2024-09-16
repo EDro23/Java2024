@@ -4,7 +4,7 @@ package ca.nl.cna.ethan.drover;
  * A simple application to play around with Strings
  * Demonstrating the newline ("\n"), Tab ("\t") and quote (\*) Special escape character in strings
  */
-public class FunWithStrings {
+public class FunWithStringEscapeCharacters {
 
     /**
      * Simple main method
