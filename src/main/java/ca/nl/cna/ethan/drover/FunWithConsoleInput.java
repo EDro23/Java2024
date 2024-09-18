@@ -16,7 +16,7 @@ public class FunWithConsoleInput {
         System.out.println("Please enter a number: ");
         int x = input.nextInt();
 
-        System.out.println("Please enter a number: ");
+        System.out.println("Please enter another number: ");
         int y = input.nextInt();
 
         int sum = x + y;
