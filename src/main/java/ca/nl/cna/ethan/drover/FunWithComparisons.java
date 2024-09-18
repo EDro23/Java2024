@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class FunWithComparisons {
 
     public static void main(String[] args) {
-        System.out.println("Fun Wtih Comparisons");
+        System.out.println("Fun Wtih Comparisons!");
 
         Scanner input = new Scanner(System.in);
 
