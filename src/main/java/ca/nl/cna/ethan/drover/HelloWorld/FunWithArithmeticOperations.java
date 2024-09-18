@@ -1,4 +1,4 @@
-package ca.nl.cna.ethan.drover;
+package ca.nl.cna.ethan.drover.HelloWorld;
 
 import java.util.Scanner;
 

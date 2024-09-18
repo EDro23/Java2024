@@ -1,4 +1,4 @@
-package ca.nl.cna.ethan.drover;
+package ca.nl.cna.ethan.drover.HelloWorld;
 
 /**
  * A simple application to demonstrate how to use PrintF method - the most useful print function

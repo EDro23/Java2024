@@ -1,4 +1,4 @@
-package ca.nl.cna.ethan.drover;
+package ca.nl.cna.ethan.drover.HelloWorld;
 
 /**
  * A simple application to play around with Strings

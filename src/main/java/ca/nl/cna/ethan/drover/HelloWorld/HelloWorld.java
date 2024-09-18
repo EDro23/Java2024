@@ -1,4 +1,4 @@
-package ca.nl.cna.ethan.drover;
+package ca.nl.cna.ethan.drover.HelloWorld;
 
 /**
  * Our first Application! A simple Hello World
