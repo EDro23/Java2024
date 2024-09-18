@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class FunWithArithmeticOperations {
 
     public static void main(String[] args) {
-        System.out.println("Fun With Arithmetic Operations!");
+        System.out.println("Fun With Arithmetic Operations! :)");
 
         Scanner input = new Scanner(System.in);
 
