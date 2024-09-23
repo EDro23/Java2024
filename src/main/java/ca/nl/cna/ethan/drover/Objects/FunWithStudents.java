@@ -7,6 +7,10 @@ import java.util.Scanner;
  */
 public class FunWithStudents {
 
+    /**
+     * Fun with Students to create student object
+     * @param args args
+     */
     public static void main(String[] args) {
         System.out.println("Fun with Students");
 
