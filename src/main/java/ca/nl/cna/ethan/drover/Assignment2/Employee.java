@@ -12,9 +12,9 @@ public class Employee {
 
     /**
      * Employee class that takes the following params
-     * @param firstName first name of employee
-     * @param lastName last name of employee
-     * @param employeeSalary employee salary
+     * @param firstName First name of employee
+     * @param lastName Last name of employee
+     * @param employeeSalary Employee salary
      */
     public Employee(String firstName, String lastName, double employeeSalary) {
         this.firstname = firstName;
@@ -31,7 +31,7 @@ public class Employee {
     }
 
     /**
-     * Sets the first name
+     * Set the first name
      * @param firstname firstname
      */
     public void setFirstname(String firstname) {
@@ -39,7 +39,7 @@ public class Employee {
     }
 
     /**
-     * Gets the last name.
+     * Get the last name.
      * @return lastname
      */
     public String getLastName() {
