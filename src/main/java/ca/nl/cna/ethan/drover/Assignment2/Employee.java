@@ -13,40 +13,48 @@ public class Employee {
 
     private String firstname;
     private String lastName;
-    private Double employeeSalary;
+    private double employeeSalary;
 
-    public Employee(String firstName, String lastName, Double employeeSalary) {
-        firstname = firstName;
-        lastName = lastName;
-        employeeSalary = employeeSalary;
+    public Employee(String firstName, String lastName, double employeeSalary) {
+        this.firstname = firstName;
+        this.lastName = lastName;
+        this.employeeSalary = employeeSalary;
     }
 
     public String getFirstname() {
+
         return firstname;
     }
 
     public void setFirstname(String firstname) {
+
         this.firstname = firstname;
     }
 
     public String getLastName() {
+
         return lastName;
     }
 
     public void setLastName(String lastName) {
+
         this.lastName = lastName;
     }
 
-    public Double getEmployeeSalary() {
+    public double getEmployeeSalary() {
+
         return employeeSalary;
     }
 
-    public void setEmployeeSalary(Double employeeSalary) {
-        if (employeeSalary < 0) {
-            employeeSalary = 0.0;
-        } else
-        {
+    public void setEmployeeSalary(double employeeSalary) {
             this.employeeSalary = employeeSalary;
-        }
+
     }
+    public void giveRaise(double percent) {
+        if (percent >0) {
+            this.employeeSalary = this.employeeSalary * (1 + percent);
+        }
+
+    }
+
 }

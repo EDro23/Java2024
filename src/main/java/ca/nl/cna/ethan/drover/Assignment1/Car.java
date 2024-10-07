@@ -42,6 +42,7 @@ public class Car {
      * @return model
      */
     public String getModel() {
+
         return Model;
     }
 
@@ -50,6 +51,7 @@ public class Car {
      * @param model model
      */
     public void setModel(String model) {
+
         Model = model;
     }
 
