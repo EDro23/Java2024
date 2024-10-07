@@ -1,5 +1,5 @@
 /**
- * Simple class for creating a car object.
+ * A java package for creating a car object.
  */
 package ca.nl.cna.ethan.drover.Assignment1;
 

@@ -3,5 +3,4 @@
  *
  * @author Ethan.Drover
  */
-
 package ca.nl.cna.ethan.drover.Assignment1;
