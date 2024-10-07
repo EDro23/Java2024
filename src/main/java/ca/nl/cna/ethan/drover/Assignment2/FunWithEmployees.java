@@ -35,6 +35,6 @@ public class FunWithEmployees {
             salaryTotal += employee.getEmployeeSalary(); // Adding employee salary to total salary.
             employeeCount ++; // Updating the employee count by 1.
         }
-        System.out.printf("\nThe average employee salary is: $%.2f",salaryTotal / NUM_EMPLOYEES);
+        System.out.printf("\nThe average salary for all %d employees is: $%.2f",employeeCount, salaryTotal / NUM_EMPLOYEES);
     }
 }
