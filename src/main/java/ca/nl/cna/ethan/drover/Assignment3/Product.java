@@ -76,9 +76,9 @@ public class Product {
 }
 
 // TODO
-//Create a class called Product which has three attributes:
+// Create a class called Product which has three attributes:
 // id (int), description (String) and price (double).
-//Create a constructor that takes in all three
+// Create a constructor that takes in all three
 // attributes and create a getting and setter for each.
 // Don’t let the id attribute or the price be negative.
 // (Note: I completed this class during course lectures

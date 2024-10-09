@@ -8,18 +8,18 @@ public class Employee {
 
     private String firstname;
     private String lastName;
-    private double employeeSalary;
+    private double salary;
 
     /**
      * Employee class that takes the following params
      * @param firstName First name of employee
      * @param lastName Last name of employee
-     * @param employeeSalary Employee salary
+     * @param salary Employee salary
      */
-    public Employee(String firstName, String lastName, double employeeSalary) {
+    public Employee(String firstName, String lastName, double salary) {
         this.firstname = firstName;
         this.lastName = lastName;
-        this.employeeSalary = employeeSalary;
+        this.salary = salary;
     }
 
     /**
@@ -58,16 +58,16 @@ public class Employee {
      * Get employee salary
      * @return employeeSalary
      */
-    public double getEmployeeSalary() {
-        return employeeSalary;
+    public double getSalary() {
+        return salary;
     }
 
     /**
      * Set employee salary
-     * @param employeeSalary employeeSalary
+     * @param salary employeeSalary
      */
-    public void setEmployeeSalary(double employeeSalary) {
-        this.employeeSalary = employeeSalary;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
     /**
@@ -76,7 +76,7 @@ public class Employee {
      */
     public void giveRaise(double percent) {
         if (percent >0) {
-            this.employeeSalary = this.employeeSalary * (1 + percent);
+            this.salary = this.salary * (1 + percent);
         }
 
     }

@@ -30,9 +30,9 @@ public class FunWithEmployees {
             Employee employee = new Employee(firstName, lastName, employeeSalary);
             employee.giveRaise(0.08); // Calling the function to give the employee the raise.
 
-            System.out.printf("\nName: %s, %s Salary: $%.2f", employee.getFirstname(), employee.getLastName(), employee.getEmployeeSalary());
+            System.out.printf("\nName: %s, %s Salary: $%.2f", employee.getFirstname(), employee.getLastName(), employee.getSalary());
 
-            salaryTotal += employee.getEmployeeSalary(); // Adding employee salary to total salary.
+            salaryTotal += employee.getSalary(); // Adding employee salary to total salary.
             employeeCount ++; // Updating the employee count by 1.
         }
         System.out.printf("\nThe average salary for all %d employees is: $%.2f",employeeCount, salaryTotal / NUM_EMPLOYEES);

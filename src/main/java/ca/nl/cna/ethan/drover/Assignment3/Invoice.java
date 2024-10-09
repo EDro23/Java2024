@@ -1,6 +1,9 @@
 package ca.nl.cna.ethan.drover.Assignment3;
 
 public class Invoice {
+
+    private String InvoiceItem;
+
 }
 
 // TODO
