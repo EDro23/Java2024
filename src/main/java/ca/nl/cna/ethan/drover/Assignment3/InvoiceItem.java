@@ -6,37 +6,38 @@ package ca.nl.cna.ethan.drover.Assignment3;
  */
 public class InvoiceItem {
 
-    private String Product;
+    private Product product;
     private int quantity;
 
     /**
      * InvoiceItem class that takes the following params.
-     * @param product Product from product class.
+     *
+     * @param product  Product from product class.
      * @param quantity Quantity.
      */
-    public InvoiceItem(String product, int quantity) {
-        Product = product;
-        this.quantity = quantity;
+    public InvoiceItem(Product product, int quantity) {
+        this.product = product;
+        this.quantity = Math.max(quantity, 0);  // Default to 0 if quantity is negative
     }
 
     /**
-     * Gets a product.
+     * Gets the product
      * @return product
      */
-    public String getProduct() {
-        return Product;
+    public Product getProduct() {
+        return product;
     }
 
     /**
-     * Set a product.
+     * Set the product
      * @param product product
      */
-    public void setProduct(String product) {
-        Product = product;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     /**
-     * Get  a quantity.
+     * Get the quantity
      * @return quantity
      */
     public int getQuantity() {
@@ -44,15 +45,29 @@ public class InvoiceItem {
     }
 
     /**
-     * Set a quantity.
+     * Set the quantity
      * @param quantity quantity
      */
     public void setQuantity(int quantity) {
-        this.quantity = quantity;
+        this.quantity = Math.max(quantity, 0);
     }
 
-    public void getItemTotal() {
+    /**
+     * Returns a string representation of an invoiceItem object.
+     * The string includes Product, Quantity, Item total
+     * @return a formatted string representing the product's ID, quantity, and item total.
+     */
+    @Override
+    public String toString() {
+        return "Product: " + product + ", Quantity: " + quantity + ", Item Total: $" + getItemTotal();
+    }
 
+    /**
+     * Get the item total
+     * @return product price * quantity
+     */
+    public double getItemTotal() {
+        return product.getPrice() * quantity;
     }
 }
 
