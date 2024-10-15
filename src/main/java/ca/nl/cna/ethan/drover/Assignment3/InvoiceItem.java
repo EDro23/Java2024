@@ -17,7 +17,9 @@ public class InvoiceItem {
      */
     public InvoiceItem(Product product, int quantity) {
         this.product = product;
-        this.quantity = Math.max(quantity, 0);  // Default to 0 if quantity is negative
+        if (quantity >= 0) {
+            this.quantity = quantity;
+        }
     }
 
     /**
@@ -49,7 +51,9 @@ public class InvoiceItem {
      * @param quantity quantity
      */
     public void setQuantity(int quantity) {
-        this.quantity = Math.max(quantity, 0);
+        if (quantity >= 0) {
+            this.quantity = quantity;
+        }
     }
 
     /**

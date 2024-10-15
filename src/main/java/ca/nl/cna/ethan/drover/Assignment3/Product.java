@@ -18,10 +18,13 @@ public class Product {
      * @param price       Price of the product.
      */
     public Product(int id, String description, double price) {
-
-        this.id = Math.max(id, 0);
+        if (id > 0) {
+            this.id = id;
+        }
         this.description = description;
-        this.price = Math.max(price, 0);
+        if (price > 0) {
+            this.price = price;
+        }
     }
 
     /**
@@ -39,7 +42,9 @@ public class Product {
      * @param id id
      */
     public void setId(int id) {
-        this.id = Math.max(id, 0);
+        if (id > 0) {
+            this.id = id;
+        }
     }
 
     /**
@@ -75,7 +80,9 @@ public class Product {
      * @param price price
      */
     public void setPrice(double price) {
-        this.price = Math.max(price, 0);
+        if (price > 0) {
+            this.price = price;
+        }
     }
 
     /**
