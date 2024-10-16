@@ -84,17 +84,6 @@ public class Product {
             this.price = price;
         }
     }
-
-    /**
-     * Returns a string representation of a Product object.
-     * The string includes Product ID, Description, Price
-     * @return a formatted string representing the product's ID, description, and price.
-     */
-    @Override
-    public String toString() {
-        return "Product ID: " + id + ", Description: " + description + ", Price: $" + price;
-
-    }
 }
 
 // TODO

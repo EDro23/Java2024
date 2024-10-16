@@ -39,16 +39,6 @@ public class Invoice {
     public double getInvoiceTotal() {
         return invoiceItem.getItemTotal();
     }
-
-    /**
-     * Returns a string representation of an Invoice object.
-     * The string includes Invoice, Invoice total.
-     * @return a formatted string representing the invoice and invoice total.
-     */
-    @Override
-    public String toString() {
-        return "Invoice: " + invoiceItem + ", Invoice Total: $" + getInvoiceTotal();
-    }
 }
 
 // TODO

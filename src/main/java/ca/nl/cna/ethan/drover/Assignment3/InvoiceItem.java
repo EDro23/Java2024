@@ -57,16 +57,6 @@ public class InvoiceItem {
     }
 
     /**
-     * Returns a string representation of an invoiceItem object.
-     * The string includes Product, Quantity, Item total
-     * @return a formatted string representing the product's ID, quantity, and item total.
-     */
-    @Override
-    public String toString() {
-        return "Product: " + product + ", Quantity: " + quantity + ", Item Total: $" + getItemTotal();
-    }
-
-    /**
      * Get the item total
      * @return product price * quantity
      */
