@@ -64,11 +64,3 @@ public class InvoiceItem {
         return product.getPrice() * quantity;
     }
 }
-
-// TODO
-// Create a class called InvoiceItem that has two attributes:
-// product (Product class above) and quantity(int).
-// Great getter and setters and a constructor.
-// Create a method called getItemTotal() which calculates
-// the total based on product price and quantity.
-// Don’t let quantity be negative.

@@ -9,7 +9,7 @@ public class InvoiceTester {
     public static void main(String[] args) {
         System.out.print("Fun with Invoices!");
 
-        // Product List
+        // Products
         System.out.printf("%n");
         Product invalidProduct = new Product(-1, "Invalid Product", -50);
         Product product1 = new Product(1, "Set For Life", 4);
