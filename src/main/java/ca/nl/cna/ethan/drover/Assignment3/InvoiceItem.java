@@ -24,7 +24,7 @@ public class InvoiceItem {
 
     /**
      * Gets the product
-     * @return product
+     * @return the product item
      */
     public Product getProduct() {
         return product;

@@ -13,6 +13,7 @@ public class Invoice {
      * @param invoiceItem the InvoiceItem associated with this invoice.
      */
     public Invoice(InvoiceItem invoiceItem) {
+
         this.invoiceItem = invoiceItem;
     }
 
@@ -21,6 +22,7 @@ public class Invoice {
      * @return invoiceItem.
      */
     public InvoiceItem getInvoiceItem() {
+
         return invoiceItem;
     }
 
@@ -29,6 +31,7 @@ public class Invoice {
      * @param invoiceItem invoiceItem.
      */
     public void setInvoiceItem(InvoiceItem invoiceItem) {
+
         this.invoiceItem = invoiceItem;
     }
 

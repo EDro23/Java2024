@@ -4,6 +4,8 @@
  * ca.nl.cna.java1.helloworld package - intro to java, covered in chapters 1 and 2.
  * ca.nl.cna.java1.assignment1 package - Assignment 01 - Java.
  * ca.nl.cna.java1.objects package - Package for objects covered in chapter 1 and 2.
+ * ca.nl.cna.java1.assignment2 package - Assignment 02 - Java.
+ * ca.nl.cna.java1.assignment3 package - Assignment 03 - Java.
  *
  * @author ethan.drover
  *
