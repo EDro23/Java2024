@@ -18,8 +18,8 @@ public class Invoice {
     }
 
     /**
-     * Get the invoice item.
-     * @return invoiceItem.
+     * Getter to get the invoice item
+     * @return invoiceItem
      */
     public InvoiceItem getInvoiceItem() {
 
@@ -27,8 +27,8 @@ public class Invoice {
     }
 
     /**
-     * Set the invoice item.
-     * @param invoiceItem invoiceItem.
+     * Set the invoice item
+     * @param invoiceItem invoiceItem
      */
     public void setInvoiceItem(InvoiceItem invoiceItem) {
 
