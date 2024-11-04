@@ -1,54 +1,71 @@
 package ca.nl.cna.ethan.drover.Assignment4;
 
+/**
+ * A class for representing and using a fibonacci calculator
+ * @author Ethan.Drover 
+ */
 public class FibonacciCalculator {
 
-    // Check if a number is a Fibonacci number
+    /**
+     * A method for determining if a number is a fibonacci number
+     * @param number number passed in by user
+     * @return return if the number passed in is a fibonacci number
+     */
     public boolean isFibonacciNumber(int number) {
         if (number < 0) {
-            return false; // Negative numbers are not Fibonacci numbers
+            return false;
         }
-
-        // Calculate the two expressions
         int expression1 = 5 * number * number + 4;
         int expression2 = 5 * number * number - 4;
-
-        // Check for perfect squares
         return (Math.sqrt(expression1) % 1 == 0) || (Math.sqrt(expression2) % 1 == 0);
     }
 
-    // Get the Fibonacci number at a specific index n
-    public int getFibonacciNumber(int n) {
-        if (n < 0) {
-            return -1; // Return -1 for negative indices
+    /**
+     * 
+     * @param number number passed in from the user
+     * @return Returns the nth Fibonacci number
+     */
+    public int getFibonacciNumber(int number) {
+        if (number < 0) {
+            return -1;
         }
-
         // Base cases
-        if (n == 0) return 0; // 0th Fibonacci number
-        if (n == 1) return 1; // 1st Fibonacci number
-
-        // Iterative calculation for Fibonacci numbers
-        int a = 0, b = 1; // Starting values
-        for (int i = 2; i <= n; i++) {
-            int c = a + b; // Calculate the next Fibonacci number
-            a = b; // Move forward in the sequence
-            b = c; // Update to the new Fibonacci number
+        if (number == 0) {
+            return 0;
+        };
+        if (number == 1) {
+            return 1;
         }
-        return b; // Return the nth Fibonacci number
+        int a = 0, b = 1;
+        for (int i = 2; i <= number; i++) {
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+        return b;
     }
 
-    // Print Fibonacci numbers up to a certain limit (no print statements in this class)
+    /**
+     * Print Fibonacci numbers up to a certain limit (no print statements in this class)
+     * @param limit Takes the param limit, as max number to go up to
+     * @param calculator calculator
+     */
     public static void printFibonacciUpTo(int limit, FibonacciCalculator calculator) {
         int index = 0;
-        int fibNumber = calculator.getFibonacciNumber(index);
+        int fibonacciNumber = calculator.getFibonacciNumber(index);
 
-        while (fibNumber <= limit) {
-            System.out.print(fibNumber + " ");
+        while (fibonacciNumber <= limit) {
+            System.out.print(fibonacciNumber + " ");
             index++;
-            fibNumber = calculator.getFibonacciNumber(index); // Get the next Fibonacci number
+            fibonacciNumber = calculator.getFibonacciNumber(index); // Get the next Fibonacci number
         }
     }
 
-    // Print the first X Fibonacci numbers (no print statements in this class)
+    /**
+     * Print the first X Fibonacci numbers
+     * @param count count param takes in the first number and prints fibonacci numbers up to that number starting at 0.
+     * @param calculator calculator param
+     */
     public static void printFirstXFibonacci(int count, FibonacciCalculator calculator) {
         for (int i = 0; i < count; i++) {
             System.out.print(calculator.getFibonacciNumber(i) + " ");
