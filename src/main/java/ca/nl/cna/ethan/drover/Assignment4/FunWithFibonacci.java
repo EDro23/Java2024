@@ -28,23 +28,35 @@ public class FunWithFibonacci {
                 System.out.print("Enter a number: ");
                 int limit = input.nextInt();
                 System.out.println("Fibonacci numbers up to " + limit + ":");
-                FibonacciCalculator.printFibonacciUpTo(limit, calculator);
+                int index = 0;
+                int fibonacciNumber = calculator.getFibonacciNumber(index);
+
+                while (fibonacciNumber <= limit) {
+                    System.out.print(fibonacciNumber + " ");
+                    index++;
+                    fibonacciNumber = calculator.getFibonacciNumber(index);
+                }
                 System.out.println();
             } else if (choice.equals("B")) {
                 System.out.print("How many Fibonacci numbers to print? ");
                 int count = input.nextInt();
-                System.out.println("The first " + count + " Fibonacci numbers:");
-                FibonacciCalculator.printFirstXFibonacci(count, calculator);
+                System.out.printf("The first %d Fibonacci numbers:",count);
+                for (int i = 0; i < count; i++) {
+                    System.out.print(calculator.getFibonacciNumber(i) + " ");
+                }
                 System.out.println();
             } else if (choice.equals("C")) {
                 System.out.print("Enter a number to check if it's a Fibonacci number: ");
                 int number = input.nextInt();
-                boolean isFibonacci = calculator.isFibonacciNumber(number);
-                System.out.println(number + " is " + (isFibonacci ? "a Fibonacci number." : "not a Fibonacci number."));
+                if (calculator.isFibonacciNumber(number)) {
+                    System.out.printf("\n%d is a Fibonacci number.", number, number);
+                } else {
+                    System.out.printf("\n%d is not a Fibonacci number.", number, number);
+                }
             } else {
                 if (!choice.equals("Q")) {
                     System.out.println("Not a valid choice, Try again!");
-                    System.out.printf("Choice: " + choice);
+                    System.out.printf("Choice: %s",choice);
                 }
             }
         } while (!choice.equals("Q"));
@@ -53,10 +65,10 @@ public class FunWithFibonacci {
     }
 
     /**
-     * Method for printing the menu for the program
+     * Class for printing the menu
      */
     private static void printMenu() {
-        System.out.println("Menu");
+        System.out.println("\nMenu");
         System.out.println("A: Print Fibonacci numbers up to a certain number");
         System.out.println("B: Print the first X Fibonacci numbers");
         System.out.println("C: Check if a number is a Fibonacci number");

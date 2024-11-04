@@ -8,6 +8,7 @@ public class FibonacciCalculator {
 
     /**
      * A method for determining if a number is a fibonacci number
+     *
      * @param number number passed in by user
      * @return return if the number passed in is a fibonacci number
      */
@@ -21,7 +22,6 @@ public class FibonacciCalculator {
     }
 
     /**
-     * 
      * @param number number passed in from the user
      * @return Returns the nth Fibonacci number
      */
@@ -32,7 +32,8 @@ public class FibonacciCalculator {
         // Base cases
         if (number == 0) {
             return 0;
-        };
+        }
+        ;
         if (number == 1) {
             return 1;
         }
@@ -43,32 +44,5 @@ public class FibonacciCalculator {
             b = c;
         }
         return b;
-    }
-
-    /**
-     * Print Fibonacci numbers up to a certain limit (no print statements in this class)
-     * @param limit Takes the param limit, as max number to go up to
-     * @param calculator calculator
-     */
-    public static void printFibonacciUpTo(int limit, FibonacciCalculator calculator) {
-        int index = 0;
-        int fibonacciNumber = calculator.getFibonacciNumber(index);
-
-        while (fibonacciNumber <= limit) {
-            System.out.print(fibonacciNumber + " ");
-            index++;
-            fibonacciNumber = calculator.getFibonacciNumber(index); // Get the next Fibonacci number
-        }
-    }
-
-    /**
-     * Print the first X Fibonacci numbers
-     * @param count count param takes in the first number and prints fibonacci numbers up to that number starting at 0.
-     * @param calculator calculator param
-     */
-    public static void printFirstXFibonacci(int count, FibonacciCalculator calculator) {
-        for (int i = 0; i < count; i++) {
-            System.out.print(calculator.getFibonacciNumber(i) + " ");
-        }
     }
 }
