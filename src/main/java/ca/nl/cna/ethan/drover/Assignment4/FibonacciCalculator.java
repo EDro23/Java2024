@@ -18,6 +18,7 @@ public class FibonacciCalculator {
         }
         int expression1 = 5 * number * number + 4;
         int expression2 = 5 * number * number - 4;
+
         return (Math.sqrt(expression1) % 1 == 0) || (Math.sqrt(expression2) % 1 == 0);
     }
 
@@ -33,7 +34,6 @@ public class FibonacciCalculator {
         if (number == 0) {
             return 0;
         }
-        ;
         if (number == 1) {
             return 1;
         }
