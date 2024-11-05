@@ -12,7 +12,7 @@ public class FibonacciCalculator {
      * @param number number passed in by user
      * @return return if the number passed in is a fibonacci number
      */
-    public boolean isFibonacciNumber(int number) {
+    public static boolean isFibonacciNumber(int number) {
         if (number < 0) {
             return false;
         }
@@ -26,7 +26,7 @@ public class FibonacciCalculator {
      * @param number number passed in from the user
      * @return Returns the nth Fibonacci number
      */
-    public int getFibonacciNumber(int number) {
+    public static int getFibonacciNumber(int number) {
         if (number < 0) {
             return -1;
         }

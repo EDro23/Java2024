@@ -9,14 +9,14 @@ import java.util.Scanner;
 public class FunWithFibonacci {
 
     /**
-     * A class for playing around with fibonacci numbers
+     * A method for playing around with fibonacci numbers
      * @param args args param
      */
     public static void main(String[] args) {
         System.out.println("Fun with Fibonacci!\n");
 
         Scanner input = new Scanner(System.in);
-        FibonacciCalculator calculator = new FibonacciCalculator();
+        FibonacciCalculator FibonacciCalculator = new FibonacciCalculator();
 
         String choice = "";
 
@@ -29,12 +29,12 @@ public class FunWithFibonacci {
                 int limit = input.nextInt();
                 System.out.println("Fibonacci numbers up to " + limit + ":");
                 int index = 0;
-                int fibonacciNumber = calculator.getFibonacciNumber(index);
+                int fibonacciNumber = FibonacciCalculator.getFibonacciNumber(index);
 
                 while (fibonacciNumber <= limit) {
                     System.out.print(fibonacciNumber + " ");
                     index++;
-                    fibonacciNumber = calculator.getFibonacciNumber(index);
+                    fibonacciNumber = FibonacciCalculator.getFibonacciNumber(index);
                 }
                 System.out.println();
             } else if (choice.equals("B")) {
@@ -42,13 +42,13 @@ public class FunWithFibonacci {
                 int count = input.nextInt();
                 System.out.printf("The first %d Fibonacci numbers:",count);
                 for (int i = 0; i < count; i++) {
-                    System.out.print(calculator.getFibonacciNumber(i) + " ");
+                    System.out.print(FibonacciCalculator.getFibonacciNumber(i) + " ");
                 }
                 System.out.println();
             } else if (choice.equals("C")) {
                 System.out.print("Enter a number to check if it's a Fibonacci number: ");
                 int number = input.nextInt();
-                if (calculator.isFibonacciNumber(number)) {
+                if (FibonacciCalculator.isFibonacciNumber(number)) {
                     System.out.printf("\n%d is a Fibonacci number.", number, number);
                 } else {
                     System.out.printf("\n%d is not a Fibonacci number.", number, number);
@@ -65,7 +65,7 @@ public class FunWithFibonacci {
     }
 
     /**
-     * Class for printing the menu
+     * Method for printing the menu
      */
     private static void printMenu() {
         System.out.println("\nMenu");
