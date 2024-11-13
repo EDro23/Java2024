@@ -7,6 +7,7 @@ public class Dice {
     private Integer sides;
 
     public Dice(Integer sides) {
+
         this.sides = sides;
     }
 
