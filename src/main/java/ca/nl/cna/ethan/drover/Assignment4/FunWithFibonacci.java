@@ -29,12 +29,12 @@ public class FunWithFibonacci {
                 int limit = input.nextInt();
                 System.out.println("Fibonacci numbers up to " + limit + ":");
                 int index = 0;
-                int fibonacciNumber = FibonacciCalculator.getFibonacciNumber(index);
+                int fibonacciNumber = ca.nl.cna.ethan.drover.Assignment4.FibonacciCalculator.getFibonacciNumber(index);
 
                 while (fibonacciNumber <= limit) {
                     System.out.print(fibonacciNumber + " ");
                     index++;
-                    fibonacciNumber = FibonacciCalculator.getFibonacciNumber(index);
+                    fibonacciNumber = ca.nl.cna.ethan.drover.Assignment4.FibonacciCalculator.getFibonacciNumber(index);
                 }
                 System.out.println();
             } else if (choice.equals("B")) {
@@ -42,13 +42,13 @@ public class FunWithFibonacci {
                 int count = input.nextInt();
                 System.out.printf("The first %d Fibonacci numbers:",count);
                 for (int i = 0; i < count; i++) {
-                    System.out.print(FibonacciCalculator.getFibonacciNumber(i) + " ");
+                    System.out.print(ca.nl.cna.ethan.drover.Assignment4.FibonacciCalculator.getFibonacciNumber(i) + " ");
                 }
                 System.out.println();
             } else if (choice.equals("C")) {
                 System.out.print("Enter a number to check if it's a Fibonacci number: ");
                 int number = input.nextInt();
-                if (FibonacciCalculator.isFibonacciNumber(number)) {
+                if (ca.nl.cna.ethan.drover.Assignment4.FibonacciCalculator.isFibonacciNumber(number)) {
                     System.out.printf("\n%d is a Fibonacci number.", number, number);
                 } else {
                     System.out.printf("\n%d is not a Fibonacci number.", number, number);
