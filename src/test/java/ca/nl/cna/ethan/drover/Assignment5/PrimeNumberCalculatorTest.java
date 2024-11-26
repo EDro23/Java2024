@@ -33,27 +33,29 @@ class PrimeNumberCalculatorTest {
         }
     }
 
-    /**
-     * Tests large prime products using a random number generator.
-     */
     @Test
-    public void testLargePrimeProduct() {
+    public void testLargeRandomPrimeFactorization() {
         Random random = new Random();
-        int prime1;
-        int prime2;
+        int randomNumber = random.nextInt(90000) + 1000000;
 
-        do {
-            prime1 = random.nextInt(40000) + 10000; // Generates a number between 10000 and 50000
-        } while (!PrimeNumberCalculator.isPrime(prime1));
+        String primeFactorization = PrimeNumberCalculator.getUniquePrimeFactorization(randomNumber);
 
-        do {
-            prime2 = random.nextInt(40000) + 10000; // Generates a number between 10000 and 50000
-        } while (!PrimeNumberCalculator.isPrime(prime2));
+        // Parse the prime factorization and compute the product
+        String[] factors = primeFactorization.split(" x ");
+        int recomputedProduct = 1;
+        for (String factor : factors) {
+            recomputedProduct *= Integer.parseInt(factor);
+        }
 
-        int product = prime1 * prime2;
+        // Verify the recomputed product matches the original random number
+        assertEquals(randomNumber, recomputedProduct,
+                "The product of the prime factorization should equal the original number.");
 
-        assertFalse(PrimeNumberCalculator.isPrime(product), "The product of two primes should not be a prime number.");
-        assertTrue(PrimeNumberCalculator.isPrime(prime1), prime1 + " should be identified as a prime number.");
-        assertTrue(PrimeNumberCalculator.isPrime(prime2), prime2 + " should be identified as a prime number.");
+        // Verify each factor in the prime factorization is a prime number
+        for (String factor : factors) {
+            int primeFactor = Integer.parseInt(factor);
+            assertTrue(PrimeNumberCalculator.isPrime(primeFactor),
+                    primeFactor + " should be identified as a prime number.");
+        }
     }
 }
