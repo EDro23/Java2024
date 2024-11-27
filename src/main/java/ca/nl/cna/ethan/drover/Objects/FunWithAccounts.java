@@ -23,7 +23,7 @@ public class FunWithAccounts {
         System.out.println("Enter amount to deposit: ");
         double amount = input.nextDouble();
 
-        account.deposit(amount);
+        account.credit(amount);
 
         System.out.printf("\nAccount name: %s, New balance: $%.2f\n", account.getName(), account.getBalance());
 

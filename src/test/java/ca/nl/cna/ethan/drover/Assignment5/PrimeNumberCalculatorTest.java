@@ -37,6 +37,7 @@ class PrimeNumberCalculatorTest {
     public void testLargeRandomPrimeFactorization() {
         Random random = new Random();
         int randomNumber = random.nextInt(90000) + 1000000;
+        System.out.printf("Random number: %d",randomNumber);
 
         String primeFactorization = PrimeNumberCalculator.getUniquePrimeFactorization(randomNumber);
 
@@ -47,6 +48,7 @@ class PrimeNumberCalculatorTest {
             recomputedProduct *= Integer.parseInt(factor);
         }
 
+        System.out.printf("\nRecomputed number: %d",recomputedProduct);
         // Verify the recomputed product matches the original random number
         assertEquals(randomNumber, recomputedProduct,
                 "The product of the prime factorization should equal the original number.");

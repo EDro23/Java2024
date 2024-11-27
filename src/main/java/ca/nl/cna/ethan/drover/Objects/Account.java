@@ -50,9 +50,19 @@ public class Account {
      * Deposit money into the account, number must be greater than zero
      * @param amount amount
      */
-    public void deposit(double amount){
+    public void credit(double amount){
         if(amount > 0){
             balance += amount;
+        }
+    }
+
+    /**
+     * Get the debit amount
+     * @param amount Amount
+     */
+    public void debit(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
         }
     }
 }

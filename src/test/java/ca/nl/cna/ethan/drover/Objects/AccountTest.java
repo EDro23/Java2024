@@ -52,15 +52,37 @@ class AccountTest {
      * Negative amounts do not affect the balance.
      */
     @Test
-    void deposit() {
+    void credit() {
         // Test credit positive amount (works)
-        account.deposit(50.0);
+        account.credit(50.0);
         assertEquals(150.0, account.getBalance(), "The balance should be updated to 150.0 after depositing 50.0.");
 
         // Test credit negative amount (ignored)
-        account.deposit(-50.0);
+        account.credit(-50.0);
         assertEquals(150.0, account.getBalance(), "The balance should remain 150.0 when depositing a negative amount.");
     }
+
+    /**
+     * Tests the debit method to ensure:
+     * - Negative amounts do not affect the balance.
+     * - Amounts larger than the balance are ignored.
+     * - Positive amounts less than the balance are deducted correctly.
+     */
+    @Test
+    void debit() {
+        // Debit negative amount (ignored)
+        account.debit(-50.0);
+        assertEquals(100.0, account.getBalance(), "The balance should remain 100.0 when debiting a negative amount.");
+
+        // Debit amount larger than balance (ignored)
+        account.debit(150.0);
+        assertEquals(100.0, account.getBalance(), "The balance should remain 100.0 when debiting an amount larger than the balance.");
+
+        // Debit amount less than balance (works)
+        account.debit(50.0);
+        assertEquals(50.0, account.getBalance(), "The balance should be updated to 50.0 after debiting 50.0.");
+    }
+
 
     /**
      * Tests the Account constructor to ensure that negative balances are set to 0.
@@ -76,23 +98,35 @@ class AccountTest {
      * - Correct account creation with an initial balance.
      * - Positive deposits update the balance correctly.
      * - Negative deposits are ignored.
-     * - Final balance matches expected results.
+     * - Debit negative amount (ignored).
+     * - Debit amount larger than balance (ignored).
+     * - Debit amount less than balance (works).
+     * - Correct final balance matches expected results.
      */
     @Test
-    void testExecutionProcedure() {
-        // Creation of account with correct balance
-        Account testAccount = new Account("Execution Test", 200.0);
-        assertEquals(200.0, testAccount.getBalance(), "The initial balance should be 200.0.");
+    void testingFinalBalance() {
 
         // Credit positive amount (works)
-        testAccount.deposit(100.0);
-        assertEquals(300.0, testAccount.getBalance(), "The balance should be updated to 300.0 after depositing 100.0.");
+        account.credit(100.0);
+        assertEquals(200.0, account.getBalance(), "The balance should be updated to 300.0 after depositing 100.0.");
 
         // Credit negative amount (ignored)
-        testAccount.deposit(-50.0);
-        assertEquals(300.0, testAccount.getBalance(), "The balance should remain 300.0 when depositing a negative amount.");
+        account.credit(-50.0);
+        assertEquals(200.0, account.getBalance(), "The balance should remain 300.0 when depositing a negative amount.");
+
+        // Debit negative amount (ignored)
+        account.debit(-50.0);
+        assertEquals(200.0, account.getBalance(), "The balance should remain 300.0 when debiting a negative amount.");
+
+        // Debit amount larger than balance (ignored)
+        account.debit(400.0);
+        assertEquals(200.0, account.getBalance(), "The balance should remain 300.0 when debiting an amount larger than the balance.");
+
+        // Debit amount less than balance (works)
+        account.debit(50);
+        assertEquals(150, account.getBalance(), "The balance should be updated to 200.0 after debiting 100.0.");
 
         // Correct final balance
-        assertEquals(300.0, testAccount.getBalance(), "The final balance should be 300.0.");
+        assertEquals(150, account.getBalance(), "The final balance should be 150.");
     }
 }
