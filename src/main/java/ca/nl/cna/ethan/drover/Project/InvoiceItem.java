@@ -2,20 +2,20 @@ package ca.nl.cna.ethan.drover.Project;
 
 public class InvoiceItem {
 
-    private Billable billabe;
+    private Billable billable;
     private int quantity;
 
-    public InvoiceItem(Billable billabe, int quantity) {
-        this.billabe = billabe;
+    public InvoiceItem(Billable billable, int quantity) {
+        this.billable = billable;
         this.quantity = quantity;
     }
 
-    public Billable getBillabe() {
-        return billabe;
+    public Billable getBillable() {
+        return billable;
     }
 
-    public void setBillabe(Billable billabe) {
-        this.billabe = billabe;
+    public void setBillable(Billable billable) {
+        this.billable = billable;
     }
 
     public int getQuantity() {
@@ -26,7 +26,11 @@ public class InvoiceItem {
         this.quantity = quantity;
     }
 
-    public void getItemTotal() {
-        
+    public double getItemTotal() {
+        if (billable instanceof Product) {
+            return billable.getPrice() * quantity; // Total = price per unit * quantity
+        } else {
+            return billable.getPrice(); // Total = price for the service
+        }
     }
 }

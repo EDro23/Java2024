@@ -108,7 +108,7 @@ class AccountTest {
 
         // Credit positive amount (works)
         account.credit(100.0);
-        assertEquals(200.0, account.getBalance(), "The balance should be updated to 300.0 after depositing 100.0.");
+        assertEquals(200.0, account.getBalance(), "The balance should be updated to 200.0 after depositing 100.0.");
 
         // Credit negative amount (ignored)
         account.credit(-50.0);
