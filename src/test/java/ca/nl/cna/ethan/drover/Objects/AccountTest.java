@@ -112,19 +112,19 @@ class AccountTest {
 
         // Credit negative amount (ignored)
         account.credit(-50.0);
-        assertEquals(200.0, account.getBalance(), "The balance should remain 300.0 when depositing a negative amount.");
+        assertEquals(200.0, account.getBalance(), "The balance should remain 200.0 when depositing a negative amount.");
 
         // Debit negative amount (ignored)
         account.debit(-50.0);
-        assertEquals(200.0, account.getBalance(), "The balance should remain 300.0 when debiting a negative amount.");
+        assertEquals(200.0, account.getBalance(), "The balance should remain 200.0 when debiting a negative amount.");
 
         // Debit amount larger than balance (ignored)
         account.debit(400.0);
-        assertEquals(200.0, account.getBalance(), "The balance should remain 300.0 when debiting an amount larger than the balance.");
+        assertEquals(200.0, account.getBalance(), "The balance should remain 200.0 when debiting an amount larger than the balance.");
 
         // Debit amount less than balance (works)
         account.debit(50);
-        assertEquals(150, account.getBalance(), "The balance should be updated to 200.0 after debiting 100.0.");
+        assertEquals(150, account.getBalance(), "The balance should be updated to 150.0 after debiting 100.0.");
 
         // Correct final balance
         assertEquals(150, account.getBalance(), "The final balance should be 150.");
