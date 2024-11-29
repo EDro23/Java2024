@@ -1,65 +1,70 @@
 package ca.nl.cna.ethan.drover.Project;
 
 /**
- * Service class that is a child to the billable class, uses the billable attributes, returns a service as a
- * billable item, charges per hour and updates the billable class
+ * Service class that is a child to the Billable class, uses the billable attributes,
+ * represents a billable service item, charges per hour, and updates the Billable class.
  */
-public class Service extends Billable{
+public class Service extends Billable {
 
     private int hours;
     private double ratePerHour;
 
     /**
-     * Billable constructor for the following params
+     * Constructor for the Service class.
      *
      * @param id          ID of the billable object
-     * @param description Description of billable object
-     * @param price       Price of billable object
+     * @param description Description of the billable object
+     * @param ratePerHour Rate charged per hour for the service
+     * @param hours       Number of hours the service is provided
      */
-    public Service(int id, String description, double price) {
-        super(id, description, price);
-
+    public Service(int id, String description, double ratePerHour, int hours) {
+        super(id, description, ratePerHour * hours); // Calculate price as ratePerHour * hours
         this.hours = hours;
         this.ratePerHour = ratePerHour;
     }
 
     /**
-     * Get the hours to effect the cost
-     * @return hours
+     * Get the number of hours for the service.
+     *
+     * @return Number of hours.
      */
     public int getHours() {
         return hours;
     }
 
     /**
-     * Set the hours, changes the price in the billable depending on hours
-     * @param hours Amount of hours
+     * Set the number of hours for the service and update the price.
+     *
+     * @param hours Number of hours.
      */
     public void setHours(int hours) {
         this.hours = hours;
-        setPrice(ratePerHour * hours);
+        setPrice(ratePerHour * hours); // Update the price based on the new hours
     }
 
     /**
-     * Get the rate per hour
-     * @return rate per hour
+     * Get the rate per hour for the service.
+     *
+     * @return Rate per hour.
      */
     public double getRatePerHour() {
         return ratePerHour;
     }
 
     /**
-     * Set te rate per hour, update the price in the billable
-     * @param ratePerHour Rate per hour to charge
+     * Set the rate per hour for the service and update the price.
+     *
+     * @param ratePerHour Rate per hour.
      */
     public void setRatePerHour(double ratePerHour) {
         this.ratePerHour = ratePerHour;
-        setPrice(ratePerHour * hours);
+        setPrice(ratePerHour * hours); // Update the price based on the new rate per hour
     }
 
     /**
-     * Method to get the billing details with the hours and rate per hour
-     * @return Returns a string with the service, hours, rate per hour and the total for the service
+     * Get the billing details of the service.
+     *
+     * @return String representation of the service's billing details.
      */
     public String getBillingDetails() {
         return "Service: " + getDescription() + ", Hours: " + hours +

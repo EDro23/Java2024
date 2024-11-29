@@ -203,4 +203,8 @@ public class Invoice {
     public void setSalesTaxRate(double salesTaxRate) {
         this.salesTaxRate = salesTaxRate;
     }
+
+    public InvoiceItem[] getInvoiceItems() {
+        return invoiceItems;
+    }
 }
