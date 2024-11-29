@@ -2,6 +2,9 @@ package ca.nl.cna.ethan.drover.Project;
 
 import java.time.LocalDate;
 
+/**
+ * Fun with invoices class to create the invoice and grab items from the hardcoded database
+ */
 public class FunWithInvoices {
 
     public static void demoInvoice() {
