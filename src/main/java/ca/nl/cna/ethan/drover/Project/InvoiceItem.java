@@ -50,6 +50,7 @@ public class InvoiceItem {
      * @param quantity The quantity that needs ot be set
      */
     public void setQuantity(int quantity) {
+
         this.quantity = quantity;
     }
 
@@ -63,7 +64,7 @@ public class InvoiceItem {
         if (billable instanceof Product) {
             return billable.getPrice() * quantity; // Total = price per unit * quantity
         } else {
-            return billable.getPrice(); // Total = price for the service
+            return billable.getPrice() * quantity; // Total = price for the service
         }
     }
 }

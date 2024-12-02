@@ -16,16 +16,15 @@ public class InvoicePrinter {
      * @param invoice The invoice that is being printed.
      */
     public void printInvoice(Invoice invoice) {
-
         // Date formatter for when the invoice is created
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String formattedDate = invoice.getDate().format(formatter);
 
         // Header
-        System.out.println("----------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------------");
         System.out.printf("%40s%n", "AUTO BODY SHOP");
         System.out.printf("%40s%n", "INVOICE #12345");
-        System.out.println("----------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------------");
 
         // Customer details
         System.out.println("Customer name: " + invoice.getCustomer().getName());
@@ -40,9 +39,9 @@ public class InvoicePrinter {
         System.out.println();
 
         // Header for the item list
-        System.out.println("----------------------------------------------------------------------");
-        System.out.printf("| %-2s | %-28s | %-6s | %-10s | %-10s |%n", "#", "Description", "Qty", "Unit Price", "Total");
-        System.out.println("----------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.printf("| %-2s | %-40s | %-6s | %-10s | %-21s |%n", "#", "Description", "Qty", "Unit Price", "Total");
+        System.out.println("-----------------------------------------------------------------------------------------------");
 
         // Printing each item in the invoice
         for (int i = 0; i < invoice.getInvoiceItems().length; i++) {
@@ -52,9 +51,10 @@ public class InvoicePrinter {
                         ? item.getQuantity() + "hr" // For services
                         : String.valueOf(item.getQuantity()); // For products
 
-                System.out.printf("| %-2d | %-28s | %-6s | $%-9.2f | $%-9.2f |%n",
+                // Adjusting the print for full descriptions
+                System.out.printf("| %-2d | %-40s | %-6s | $%-9.2f | $%-20.2f |%n",
                         i + 1,
-                        item.getBillable().getDescription(),
+                        item.getBillable().getDescription(), // Full description
                         quantity,
                         item.getBillable().getPrice(),
                         item.getItemTotal());
@@ -62,11 +62,11 @@ public class InvoicePrinter {
         }
 
         // Footer of the invoice
-        System.out.println("----------------------------------------------------------------------");
-        System.out.printf("| %41s | $%-9.2f |%n", "Subtotal:", invoice.getInvoiceTotal());
-        System.out.printf("| %41s | $%-9.2f |%n", "Sales Tax (13%):", invoice.getInvoiceTotalWithTax() - invoice.getInvoiceTotal());
-        System.out.printf("| %41s | $%-9.2f |%n", "TOTAL:", invoice.getInvoiceTotalWithTax());
-        System.out.println("----------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.printf("| %42s | $%-45.2f |%n", "Subtotal:", invoice.getInvoiceTotal());
+        System.out.printf("| %42s | $%-45.2f |%n", "Sales Tax (13%):", invoice.getInvoiceTotalWithTax() - invoice.getInvoiceTotal());
+        System.out.printf("| %42s | $%-45.2f |%n", "TOTAL:", invoice.getInvoiceTotalWithTax());
+        System.out.println("-----------------------------------------------------------------------------------------------");
         System.out.println();
 
         // Footer message

@@ -6,11 +6,13 @@ import java.time.LocalDate;
  * Fun with invoices class to create the invoice and grab items from the hardcoded database
  */
 public class FunWithInvoices {
-
+    /**
+     * Demo invoice class to demo an invoice.
+     */
     public static void demoInvoice() {
         BillableItemsDatabase database = new BillableItemsDatabase();
 
-        // Step 2: Retrieve products and services from the database
+        //  Retrieve products and services from the database
         Product product1 = (Product) database.findById(101); // Windshield Wiper Blades
         Product product2 = (Product) database.findById(102); // Engine Oil
         Product product3 = (Product) database.findById(103); // Air Filter
