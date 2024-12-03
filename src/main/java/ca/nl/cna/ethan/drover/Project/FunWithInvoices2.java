@@ -2,6 +2,9 @@ package ca.nl.cna.ethan.drover.Project;
 
 import java.time.LocalDate;
 
+/**
+ * Fun with invoices 2 for the 2nd invoice
+ */
 public class FunWithInvoices2 {
 
     /**
