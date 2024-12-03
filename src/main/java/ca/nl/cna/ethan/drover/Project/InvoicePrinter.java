@@ -22,8 +22,8 @@ public class InvoicePrinter {
 
         // Header
         System.out.println("-----------------------------------------------------------------------------------------------");
-        System.out.printf("%40s%n", "AUTO BODY SHOP");
-        System.out.printf("%40s%n", "INVOICE #12345");
+        System.out.printf("%55s%n", "AUTO BODY SHOP");
+        System.out.printf("%55s%n", "INVOICE #12345");
         System.out.println("-----------------------------------------------------------------------------------------------");
 
         // Customer details
