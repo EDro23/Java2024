@@ -63,9 +63,9 @@ public class InvoicePrinter {
 
         // Footer of the invoice
         System.out.println("-----------------------------------------------------------------------------------------------");
-        System.out.printf("| %42s | $%-45.2f |%n", "Subtotal:", invoice.getInvoiceTotal());
-        System.out.printf("| %42s | $%-45.2f |%n", "Sales Tax (13%):", invoice.getInvoiceTotalWithTax() - invoice.getInvoiceTotal());
-        System.out.printf("| %42s | $%-45.2f |%n", "TOTAL:", invoice.getInvoiceTotalWithTax());
+        System.out.printf("| %67s | $%-20.2f |%n", "Subtotal:", invoice.getInvoiceTotal());
+        System.out.printf("| %67s | $%-20.2f |%n", "Sales Tax (13%):", invoice.getInvoiceTotalWithTax() - invoice.getInvoiceTotal());
+        System.out.printf("| %67s | $%-20.2f |%n", "TOTAL:", invoice.getInvoiceTotalWithTax());
         System.out.println("-----------------------------------------------------------------------------------------------");
         System.out.println();
 
