@@ -61,10 +61,7 @@ public class InvoiceItem {
      * @return The total cost for this invoice item.
      */
     public double getItemTotal() {
-        if (billable instanceof Product) {
-            return billable.getPrice() * quantity; // Total = price per unit * quantity
-        } else {
-            return billable.getPrice() * quantity; // Total = price for the service
-        }
+        // Total = price for the service
+        return billable.getPrice() * quantity; // Total = price per unit * quantity
     }
 }
