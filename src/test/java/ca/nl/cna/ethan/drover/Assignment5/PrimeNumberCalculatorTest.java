@@ -41,7 +41,6 @@ class PrimeNumberCalculatorTest {
 
         String primeFactorization = PrimeNumberCalculator.getUniquePrimeFactorization(randomNumber);
 
-        // Parse the prime factorization and compute the product
         String[] factors = primeFactorization.split(" x ");
         int recomputedProduct = 1;
         for (String factor : factors) {

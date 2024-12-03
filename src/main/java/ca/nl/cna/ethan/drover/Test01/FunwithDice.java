@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Fun with dice class to roll a dice, either a 6 sided, 10 sided or 20 sided dice.
  */
-public class FunwithDice {
+class FunwithDice {
     public static int main(String[] args) {
         System.out.println("Fun with Dice!");
 

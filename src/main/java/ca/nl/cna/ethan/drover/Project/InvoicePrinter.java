@@ -21,10 +21,10 @@ public class InvoicePrinter {
         String formattedDate = invoice.getDate().format(formatter);
 
         // Header
-        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("-".repeat(95));
         System.out.printf("%55s%n", "AUTO BODY SHOP");
         System.out.printf("%55s%n", "INVOICE #12345");
-        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("-".repeat(95));
 
         // Customer details
         System.out.println("Customer name: " + invoice.getCustomer().getName());
@@ -39,9 +39,9 @@ public class InvoicePrinter {
         System.out.println();
 
         // Header for the item list
-        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("-".repeat(95));
         System.out.printf("| %-2s | %-40s | %-6s | %-10s | %-21s |%n", "#", "Description", "Qty", "Unit Price", "Total");
-        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("-".repeat(95));
 
         // Printing each item in the invoice
         for (int i = 0; i < invoice.getInvoiceItems().length; i++) {
@@ -62,11 +62,11 @@ public class InvoicePrinter {
         }
 
         // Footer of the invoice
-        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("-".repeat(95));
         System.out.printf("| %67s | $%-20.2f |%n", "Subtotal:", invoice.getInvoiceTotal());
         System.out.printf("| %67s | $%-20.2f |%n", "Sales Tax (13%):", invoice.getInvoiceTotalWithTax() - invoice.getInvoiceTotal());
         System.out.printf("| %67s | $%-20.2f |%n", "TOTAL:", invoice.getInvoiceTotalWithTax());
-        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("-".repeat(95));
         System.out.println();
 
         // Footer message
